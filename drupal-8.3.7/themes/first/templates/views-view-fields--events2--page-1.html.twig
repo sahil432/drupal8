@@ -1,0 +1,22 @@
+{{ fields.title.content }}
+<br>
+{{ fields.body.content }}
+
+
+
+
+
+{%set gh =url('<front>')%}
+	{{gh}}
+	
+
+{{ base_path ~ directory }}<br>
+{{ url('<current>') }}<br>
+{{ url('<front>') }}
+{% set args = {'!author': 'foo', '!date': 'bar'} %}
+{{dump(args)}}
+
+{%set as='/cdc'%}
+{{gh['#markup'] ~ as}}
+
+	{{view1}}

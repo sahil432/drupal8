@@ -1,0 +1,15 @@
+first.content:
+  path: '/first_page'
+  defaults:
+    _controller: '\Drupal\first\Controller\FirstController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+    
+first.form:
+  path: '/second'
+  defaults:
+    _title: 'first form'
+    _form: '\Drupal\first\Form\FirstForm'
+  requirements:
+    _permission: 'site config'

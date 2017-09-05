@@ -1,0 +1,14 @@
+name: 'event section'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - field
+  - image
+  - menu_ui
+  - node
+  - path
+  - text
+  - user
+  - views
+version: 8.x-1.0

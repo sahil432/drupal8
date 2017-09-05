@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+function first_preprocess_page(&$variables){
+  $stuff  = views_embed_view('events2', 'block_1');
+  $variables["my_view"] = \Drupal::service('renderer')->renderRoot($stuff);
+ $block = \Drupal\block\Entity\Block::load('first');
+  $block_content = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+ $variables['youblockname'] = $block_content; 
+ 
+ 
+  }

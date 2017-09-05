@@ -1,0 +1,33 @@
+<?php
+
+
+use Drupal\Core\Form\FormStateInterface;
+function first_form_second_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['phone_number']['#title'] = t('Start with + and your country code.');
+
+
+  
+  }
+function first_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) 
+{
+	if($form_id == 'user_login_form')
+	{
+		$form['name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('name'),
+    );
+	}
+	
+	if($form_id == 'second_form')
+	{
+		$form['phone_number'] = array(
+      '#type' => 'tel',
+      '#title' => t('name'),
+    );
+	}
+}
+ 
+
+
+
+?>
