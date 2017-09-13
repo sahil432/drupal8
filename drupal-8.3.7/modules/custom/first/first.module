@@ -28,6 +28,28 @@ function first_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_sta
 }
  
 
+ function first_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
+ {
+
+	 
+	 $node = \Drupal::routeMatch()->getParameter('node');
+if ($node) {
+  // You can get nid and anything else you need from the node object.
+  echo $nid = $node->id();
+}
+
+$node = \Drupal\node\Entity\Node::load($nid);
+//kint($node);
+echo $node->title->value.'<br>'; 
+
+	echo $node->original->title->value;
+echo $node->moderation_state->target_id;
+echo $moderation_state = $entity->get('moderation_state')->getString();
+
+
+die;
+	 
+ }
 
 
 ?>
